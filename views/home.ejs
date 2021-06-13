@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+    <!-- It does the same job as for loop. -->
+    <!-- <% HSContent.forEach(function(content){ %>
+        <h1><%= content.title %></h1>
+        <p><%= content.body %></p>
+    <% }); %> -->
+
+    <% for(var i=0;i< HSContent.length;i++){ %>
+        <h1><%= HSContent[i].title %></h1>
+        <p>
+            <%= ((HSContent[i].body).substring(0, 100))+" ..." %>
+            <a href="/post/<%= HSContent[i].title %>">Read More</a>
+        </p>
+    <% } %>
+<%- include("partials/footer"); -%>
